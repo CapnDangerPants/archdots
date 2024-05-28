@@ -1,0 +1,186 @@
+* {
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+  font-size: 13px;
+}
+
+window#waybar {
+  background-color: rgba (0, 0, 0, 0); 
+  color: #ffffff;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+button {
+  /* Use box-shadow instead of border so the text isn't offset */
+  box-shadow: inset 0 -3px transparent;
+  /* Avoid rounded borders under each button name */
+  border: none;
+  border-radius: 0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+  background: inherit;
+  box-shadow: inset 0 -3px #ffffff;
+}
+
+#workspaces button {
+  padding: 0 5px;
+  margin-left: 7px;
+  margin-right: 7px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: #f2cdcd;
+  border-radius: 15px;
+  transition: 0.5s;
+}
+
+#workspaces button:hover {
+  color: #f5c2e7;
+  box-shadow: inherit;
+  text-shadow: inherit;
+}
+
+#workspaces button.active {
+  background-color: #f5c2e7;
+  font-size: 7px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#workspaces button.urgent {
+  background-color: #f38ba8;
+}
+
+#clock,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#tray,
+#mpd {
+  padding: 0 10px;
+  color: #181825;
+}
+
+#window {
+  margin-left: 7px;
+  margin-bottom: 7px;
+  color: #1e1e2e;
+  background-color: #f9e2af;
+  padding-left: 7px;
+  padding-right: 7px;
+  padding-top: 3px;
+  border-radius: 15px;
+  border-style: solid;
+  border-color: #1e1e2e;
+  border-width: 3px;
+}
+#workspaces {
+  margin: 0 4px;
+  margin-bottom: 7px;
+  font-size: 7px;
+  background-color: #1e1e2e; 
+  border-radius: 19px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+  margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+  margin-right: 0;
+}
+
+#clock {
+  margin-bottom: 7px;
+  padding-top: 4px;
+  margin-right: 7px;
+  border-radius: 15px;
+  color: #181825;
+  background-color: #f5c2e7;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #1e1e2e;
+}
+
+@keyframes blink {
+  to {
+    background-color: #181825;
+    color: #000000;
+  }
+}
+
+label:focus {
+  background-color: #000000;
+}
+
+#cpu {
+  margin-bottom: 7px;
+  border-radius: 15px;
+  color: #181825;
+  background-color: #89b4fa;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #1e1e2e;
+}
+
+#memory {
+  margin-bottom: 7px;
+  padding-top: 2px;
+  border-radius: 15px;
+  color: #181825;
+  background-color: #a6e3a1;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #1e1e2e;
+}
+
+#network {
+  margin-bottom: 7px;
+  border-radius: 15px;
+  background-color: #b4befe;
+  color: #181825;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #1e1e2e;
+}
+
+#network.disconnected {
+  background-color: #f53c3c;
+}
+
+#pulseaudio {
+  margin-bottom: 7px;
+  border-radius: 15px;
+  color: #181825;
+  background-color: #fab387;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #1e1e2e;
+}
+
+#pulseaudio.muted {
+  background-color: #90b1b1;
+  color: #2a5c45;
+}
+
+#tray {
+  margin-left: 7px;
+  margin-right: 7px;
+  border-radius: 15px;
+  background-color: #1e1e2e;
+  color: #1e1e2e;
+}
+
+#tray > .passive {
+  color: #181825;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  color: #181825;
+}
